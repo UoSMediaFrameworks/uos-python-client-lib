@@ -1,0 +1,10 @@
+{
+  "generator-python-lib": {
+    "projectName": "mf_client",
+    "fullName": "Aaron Phillips (University of Salford)",
+    "email": "a.phillips3@edu.salford.ac.uk",
+    "gitlabName": "non",
+    "ciProvider": "None",
+    "version": "4.0.14"
+  }
+}
