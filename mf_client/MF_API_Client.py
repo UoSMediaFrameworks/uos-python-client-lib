@@ -3,7 +3,7 @@
 #Use:           Will implement functions for all commands to the controller
 #-------------------------------------------------------------------------------
 
-from MF_socketIO import *
+from mf_client.MF_socketIO import *
 import json
 
 
