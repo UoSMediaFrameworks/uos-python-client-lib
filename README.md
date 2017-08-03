@@ -18,6 +18,7 @@ mf_client = MF_API_Client('url', 80, 'password')
 These are generic commands not targeted at a specific room
 
 **Get a list of all available scenes:**
+
 Scenes will be returned to the specified callback
 ```python
 def scenes_callback(scenes):
@@ -27,6 +28,7 @@ mf_client.getScenes(scenes_callback)
 ```
 
 **Get the content of a scene from it's ID:**
+
 Returns the full content of a single scene
 ```python
 def scene_callback(scene):
@@ -46,6 +48,7 @@ mf_client.sendScene('room', 'sceneID')
 ```
 
 **Send a list of scenes  themes for playback:**
+
 There must be at least one scene, any other combination of scenes and themes is valid
 ```python
 mf_client.sendScenesAndThemes('room', ['sceneID','sceneID'], ['theme','theme'])
