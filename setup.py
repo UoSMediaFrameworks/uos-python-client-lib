@@ -66,5 +66,5 @@ setup(
         'virtualenv>=15.0.1,<16.0.0'
     ],
     url='',
-    version='0.0.3rc1'
+    version='0.0.3'
 )

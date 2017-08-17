@@ -6,6 +6,20 @@ A python library for media framework client devices
 
 ```PIP install mf_client```
 
+## Releasing
+
+Ensure that you have set new application version
+
+Source Distribution (unbuilt) [Building Release](https://packaging.python.org/tutorials/distributing-packages/#source-distributions)
+
+```python setup.py sdist```
+
+This will create a tar.gz in the dist folder.
+
+To release the version use the below command [Publishing Release](https://packaging.python.org/tutorials/distributing-packages/#upload-your-distributions)
+
+```twine upload dist/{package_name-release version.tar.gz}```
+
 ## Usage
 
 **Create a new media framework client:**
