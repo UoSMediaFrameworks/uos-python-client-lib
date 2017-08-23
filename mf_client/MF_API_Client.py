@@ -46,3 +46,13 @@ class MF_API_Client:
             callback(scene)
 
         self.controller.getWithParam('loadScene', ID, on_scene_loaded)
+
+    #get a single scene by name
+    def getSceneByName(self, name, callback):
+
+        def on_scene_loaded(*args):
+            scene = args[1]
+            #add any pre processing here
+            callback(scene)
+
+        self.controller.getWithParam('loadSceneByName', name, on_scene_loaded)

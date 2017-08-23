@@ -1,7 +1,7 @@
 import sys
-sys.path.insert(0,'../mf_client') #lib location
+sys.path.insert(0,'./../mf_client') #lib location
 
-from MF_API_Client import *
+import mf_client.MF_API_Client
 from pprint import *
 import time
 
@@ -9,7 +9,7 @@ testRoom = "presentation"
 test_scenes = []
 
 #these variables would be pulled from a config in a real client
-mf_client = MF_API_Client('url', 80, 'password')
+mf_client = mf_client.MF_API_Client.MF_API_Client('url', 80, 'password')
 print("Connected to MF as a client")
 
 #callbacks----------------------------------------------------------------------
@@ -22,8 +22,13 @@ def scene_callback(scene):
     pprint(scene)
 
 #generic requests----------------------------------------------------------------
+testSceneNameForSearch = "Afterburner"
+print("Finding a scene by name")
+mf_client.getSceneByName(testSceneNameForSearch, scene_callback)
 
-print "Getting all scenes"
+time.sleep(5) #wait for search by name to complete
+
+print("Getting all scenes")
 mf_client.getSceneList(scenes_callback)
 
 time.sleep(5) #wait to make sure scenes have been recived
@@ -31,11 +36,11 @@ time.sleep(5) #wait to make sure scenes have been recived
 #get a specific scenes data
 testSceneID = test_scenes[1].get('_id')
 testSceneName = test_scenes[1].get('name')
-print "Getting scene: " + testSceneName + " with ID: " + testSceneID
+print("Getting scene: " + testSceneName + " with ID: " + testSceneID)
 mf_client.getSceneByID(testSceneID, scene_callback)
 
 time.sleep(5)
-print "Sending a single scene"
+print("Sending a single scene")
 mf_client.sendScene('5797309781a29c700e9ddf41')
 
 time.sleep(5)
@@ -56,8 +61,8 @@ try:
     mf_client.sendScenesAndThemes(testRoom, [])
     #should throw error
 except Exception as e:
-    print e
+    print(e)
 
-print "done"
+print("done")
 
 exit()

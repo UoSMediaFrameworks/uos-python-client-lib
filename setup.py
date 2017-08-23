@@ -50,6 +50,7 @@ setup(
         'coverage': Coverage,
     },
     install_requires=[
+        'socketIO-client==0.7.2'
     ],
     license='Apache License (2.0)',
     name='mf_client',
