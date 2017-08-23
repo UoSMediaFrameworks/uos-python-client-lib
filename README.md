@@ -51,6 +51,16 @@ def scene_callback(scene):
 mf_client.getSceneByID(testSceneID, scene_callback)
 ```
 
+**Get a scene by name:**
+
+Returns the full content of a single scene searched by scene name
+```python
+def scene_callback(scene):
+    print(scene)
+
+mf_client.getSceneByName(testSceneName, scene_callback)
+```
+
 #### Playback Commands
 
 These commands are targeted at a specific playback room
